@@ -15,7 +15,7 @@
             Admin Login
           </div>
           <div class="card-body">
-            <form id="loginForm" action="ControlPanel1.html" method="post">
+            <form id="loginForm" action="control1.html" method="post">
               <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" class="form-control text-center" id="username" name="username" required>
@@ -59,7 +59,7 @@
       // Replace with your actual username and password verification logic
       if (username === "correct_username" && password === "correct_password") {
         // Login successful, redirect to ControlPanel1.html
-        window.location.href = "ControlPanel1.html";
+        window.location.href = "control1.html";
       } else {
         // Login failed, display error message
         alert("Invalid username or password. Please try again.");
