@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login</title>
+  <title>تسجيل دخول الإدارة</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -12,23 +12,23 @@
       <div class="col-md-6">
         <div class="card">
           <div class="card-header text-center">
-            Admin Login
+            تسجيل دخول الإدارة
           </div>
           <div class="card-body">
-            <form id="loginForm" action="https://kimos998.github.io/amoulchi/control1.html" method="post">
+            <form id="loginForm" action="ControlPanel1.html" method="post">
               <div class="form-group">
-                <label for="username">Username</label>
+                <label for="username">اسم المستخدم</label>
                 <input type="text" class="form-control text-center" id="username" name="username" required>
               </div>
               <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">كلمة المرور</label>
                 <input type="password" class="form-control text-center" id="password" name="password" required>
                 <span class="input-group-btn">
                   <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
                 </span>
               </div>
               <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
               </div>
             </form>
           </div>
@@ -59,7 +59,7 @@
       // Replace with your actual username and password verification logic
       if (username === "correct_username" && password === "correct_password") {
         // Login successful, redirect to ControlPanel1.html
-        window.location.href = "https://kimos998.github.io/amoulchi/control1.html";
+        window.location.href = "ControlPanel1.html";
       } else {
         // Login failed, display error message
         alert("Invalid username or password. Please try again.");
