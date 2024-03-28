@@ -1,49 +1,52 @@
- <title>تسجيل دخول الإدارة</title>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-<div class="card">
-  <div class="card-header text-center">
-    تسجيل دخول الإدارة
+</head>
+<body>
+  <div class="card">
+    <div class="card-header text-center">
+      Admin Login
+    </div>
+    <div class="card-body">
+      <form id="loginForm" action="" method="post">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control text-center" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control text-center" id="password" name="password" required>
+          <span class="input-group-btn">
+            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+          </span>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="card-body">
-    <form id="loginForm" action="" method="post">
-      <div class="form-group">
-        <label for="username">اسم المستخدم</label>
-        <input type="text" class="form-control text-center" id="username" name="username" required>
-      </div>
-      <div class="form-group">
-        <label for="password">كلمة المرور</label>
-        <input type="password" class="form-control text-center" id="password" name="password" required>
-        <span class="input-group-btn">
-          <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-        </span>
-      </div>
-      <div class="form-group text-center">
-        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
-      </div>
-    </form>
-  </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event){
+      event.preventDefault(); // Prevent form from submitting automatically
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(event){
-  event.preventDefault(); // يمنع إرسال النموذج بشكل تلقائي
-  
-  // استخراج قيم اسم المستخدم وكلمة المرور من النموذج
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-  
-  // التحقق من صحة اسم المستخدم وكلمة المرور
-  if (username === "lmodir" && password === "lmodir2345") {
-    // في حالة صحة اسم المستخدم وكلمة المرور، توجيه المستخدم إلى صفحة ControlPanel1.html
-    window.location.href = "control1.html";
-  } else {
-    // في حالة عدم صحة اسم المستخدم أو كلمة المرور، عرض رسالة الخطأ
-    alert("خطأ: اسم المستخدم أو كلمة المرور غير صحيحة.");
-  }
-});
-</script>
+      // Retrieve username and password values from the form
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Validate username and password
+     if (username === "lmodir" && password === "lmodir2345") {
+        // If username and password are correct, redirect user to ControlPanel1.html
+        window.location.href = "control1.html";
+      } else {
+        // If username or password is incorrect, display error message
+        alert("Error: Incorrect username or password.");
+      }
+    });
+  </script>
+</body>
+</html>
