@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+</head>
+<body>
+
+<?php
+session_start();
+// إعداد متغيرات اسم المستخدم وكلمة المرور الصحيحة
+$correct_username = "admin";
+$correct_password = "password";
+
+// تحقق من إرسال النموذج
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    
+    // التحقق من أن اسم المستخدم وكلمة المرور صحيحة
+    if ($username === $correct_username && $password === $correct_password) {
+        // تسجيل الدخول بنجاح، توجيه المستخدم إلى الواجهة الرئيسية
+        $_SESSION["loggedin"] = true;
+        header("location: dashboard.php");
+        exit;
+    } else {
+        echo "Invalid username or password.";
+    }
+}
+?>
+
+<h2>Admin Login</h2>
+<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <div>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <div>
+        <input type="submit" value="Login">
+    </div>
+</form>
+
+</body>
+</html>
