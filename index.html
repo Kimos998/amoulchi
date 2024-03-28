@@ -1,70 +1,46 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تسجيل دخول الإدارة</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-header text-center">
-            تسجيل دخول الإدارة
-          </div>
-          <div class="card-body">
-            <form id="loginForm" action="ControlPanel1.html" method="post">
-              <div class="form-group">
-                <label for="username">اسم المستخدم</label>
-                <input type="text" class="form-control text-center" id="username" name="username" required>
-              </div>
-              <div class="form-group">
-                <label for="password">كلمة المرور</label>
-                <input type="password" class="form-control text-center" id="password" name="password" required>
-                <span class="input-group-btn">
-                  <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-                </span>
-              </div>
-              <div class="form-group text-center">
-                <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-header text-center">
+    تسجيل دخول الإدارة
   </div>
-  <script>
-    $(".reveal").on('click', function() {
-      var $pwd = $(this).closest('.form-group').find('input[type="password"]');
-      if ($pwd.attr('type') === 'password') {
-        $pwd.attr('type', 'text');
-        $(this).find('.glyphicon').removeClass('glyphicon-eye-open').addClass('glyphicon-eye-close');
-      } else {
-        $pwd.attr('type', 'password');
-        $(this).find('.glyphicon').removeClass('glyphicon-eye-close').addClass('glyphicon-eye-open');
-      }
-    });
+  <div class="card-body">
+    <form id="loginForm" action="" method="post">
+      <div class="form-group">
+        <label for="username">اسم المستخدم</label>
+        <input type="text" class="form-control text-center" id="username" name="username" required>
+      </div>
+      <div class="form-group">
+        <label for="password">كلمة المرور</label>
+        <input type="password" class="form-control text-center" id="password" name="password" required>
+        <span class="input-group-btn">
+          <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+        </span>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" class="btn btn-primary">تسجيل الدخول</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-    // Add event listener to the form submission
-    $("#loginForm").submit(function(event) {
-      event.preventDefault(); // Prevent default form submission
-
-      // Get username and password values
-      var username = $("#username").val();
-      var password = $("#password").val();
-
-      // Replace with your actual username and password verification logic
-      if (username === "correct_username" && password === "correct_password") {
-        // Login successful, redirect to ControlPanel1.html
-        window.location.href = "ControlPanel1.html";
-      } else {
-        // Login failed, display error message
-        alert("Invalid username or password. Please try again.");
-      }
-    });
-  </script>
-</body>
-</html>
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(event){
+  event.preventDefault(); // يمنع إرسال النموذج بشكل تلقائي
+  
+  // استخراج قيم اسم المستخدم وكلمة المرور من النموذج
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  
+  // التحقق من صحة اسم المستخدم وكلمة المرور
+  if (username === "الاسم_الصحيح" && password === "الكلمة_المرور_الصحيحة") {
+    // في حالة صحة اسم المستخدم وكلمة المرور، توجيه المستخدم إلى صفحة ControlPanel1.html
+    window.location.href = "ControlPanel1.html";
+  } else {
+    // في حالة عدم صحة اسم المستخدم أو كلمة المرور، عرض رسالة الخطأ
+    alert("خطأ: اسم المستخدم أو كلمة المرور غير صحيحة.");
+  }
+});
+</script>
