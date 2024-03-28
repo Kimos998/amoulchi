@@ -1,51 +1,45 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>My Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .full-page-button {
+      background-color: #0073b7;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+
+    .full-page-button:hover {
+      background-color: #00579a;
+    }
+  </style>
 </head>
 <body>
-  <div class="card">
-    <div class="card-header text-center">
-      Admin Login
-    </div>
-    <div class="card-body">
-      <form id="loginForm" action="" method="post">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" class="form-control text-center" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" class="form-control text-center" id="password" name="password" required>
-          <span class="input-group-btn">
-            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
-          </span>
-        </div>
-        <div class="form-group text-center">
-          <button type="submit" class="btn btn-primary">Login</button>
-        </div>
-      </form>
-    </div>
-  </div>
+  <button class="full-page-button">
+   اضافة أفلام الى الموقع
+  </button>
+
   <script>
-    document.getElementById("loginForm").addEventListener("submit", function(event){
-      event.preventDefault(); // Prevent form from submitting automatically
+    const button = document.querySelector(".full-page-button");
 
-      // Retrieve username and password values from the form
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-
-      // Validate username and password
-     if (username === "lmodir" && password === "lmodir2345") {
-        // If username and password are correct, redirect user to ControlPanel1.html
-        window.location.href = "control1.html";
-      } else {
-        // If username or password is incorrect, display error message
-        alert("Error: Incorrect username or password.");
-      }
+    button.addEventListener("click", () => {
+      window.location.href = "control1.html";
     });
   </script>
 </body>
