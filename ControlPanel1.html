@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Video</title>
+</head>
+<body>
+
+<h2>Add Video</h2>
+<form method="post" action="process_video.php">
+    <div>
+        <label for="video_name">Video Name:</label>
+        <input type="text" id="video_name" name="video_name" required>
+    </div>
+    <div>
+        <label for="video_link">Video Link:</label>
+        <input type="text" id="video_link" name="video_link" required>
+    </div>
+    <div>
+        <label for="video_description">Video Description:</label>
+        <textarea id="video_description" name="video_description" required></textarea>
+    </div>
+    <div>
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="action">Action</option>
+            <option value="romantic">Romantic</option>
+            <option value="horror">Horror</option>
+            <option value="kids">Kids</option>
+            <option value="science_fiction">Science Fiction</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Add Video">
+    </div>
+</form>
+
+</body>
+</html>
