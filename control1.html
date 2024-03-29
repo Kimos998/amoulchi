@@ -108,42 +108,41 @@
     });
   </script>
 
-  <!-- Add Video Form -->
-  <div id="addVideoForm" style="display: none;">
-   
-    <form method="post" action="process_video.php" enctype="multipart/form-data">
-      <div>
-        <label for="video_name">Video Name:</label>
-        <input type="text" id="video_name" name="video_name" required>
-      </div>
-      <div>
-        <label for="video_description">Video Description:</label>
-        <textarea id="video_description" name="video_description" required></textarea>
-      </div>
-      <div>
-        <label for="video_link">Video Link:</label>
-        <input type="text" id="video_link" name="video_link" required>
-      </div>
-      <div class="poster-upload">
-        <label for="poster">Poster Image:</label>
-        <input type="file" id="poster" name="poster" accept="image/*" required>
-      </div>
-      <div>
-        <label for="category">Category:</label>
-        <select id="category" name="category" required>
-          <option value="action">Action</option>
-          <option value="romantic">Romantic</option>
-          <option value="horror">Horror</option>
-          <option value="kids">Kids</option>
-          <option value="science_fiction">Science Fiction</option>
-        </select>
-      </div>
-       <br>
-      <div>
-        <input type="submit" value="Add Video">
-      </div>
+<!-- Add Video Form -->
+<div id="addVideoForm" style="display: none;">
+    <form method="post" action="https://script.google.com/macros/s/AKfycbyK9Y7a-JQvDHs8fVrDt7uAPUYJZzhs7zszCj0Hie8IGS759Lvj2mIIk-om1pTyEzM/exec" enctype="multipart/form-data">
+        <div>
+            <label for="video_name">Video Name:</label>
+            <input type="text" id="video_name" name="name" required>
+        </div>
+        <div>
+            <label for="video_description">Video Description:</label>
+            <textarea id="video_description" name="description" required></textarea>
+        </div>
+        <div>
+            <label for="video_link">Video Link:</label>
+            <input type="text" id="video_link" name="url" required>
+        </div>
+        <div class="poster-upload">
+            <label for="poster">Poster Image:</label>
+            <input type="file" id="poster" name="poster" accept="image/*" required>
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="action">Action</option>
+                <option value="romantic">Romantic</option>
+                <option value="horror">Horror</option>
+                <option value="kids">Kids</option>
+                <option value="science_fiction">Science Fiction</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="Add Video">
+        </div>
     </form>
-  </div>
+</div>
 </body>
 </html>
 
