@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
-  #addVideoForm {
+  <style>
+    /* Your CSS styles here */
+     #addVideoForm {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -59,19 +60,19 @@
     border-radius: 5px;
   }
   
-</style>
-
-
+  </style>
+</head>
 <body>
 
-<body>
-  <div class="card">
-    <div class="card-header text-center">
-      Admin Login
-    </div>
-    <div class="card-body">
-      <form id="loginForm" action="" method="post">
-        <div class="form-group">
+<div class="card">
+  <div class="card-header text-center">
+    add video
+  </div>
+  <div class="card-body">
+    <form id="loginForm" action="" method="post">
+      <!-- Your login form here -->
+      
+       <div class="form-group">
           <label for="username">Username</label>
           <input type="text" class="form-control text-center" id="username" name="username" required>
         </div>
@@ -85,33 +86,17 @@
         <div class="form-group text-center">
           <button type="submit" class="btn btn-primary">Login</button>
         </div>
-      </form>
-    </div>
+      
+      
+    </form>
   </div>
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function(event){
-      event.preventDefault(); // Prevent form from submitting automatically
-
-      // Retrieve username and password values from the form
-      var username = document.getElementById("username").value;
-      var password = document.getElementById("password").value;
-
-      // Validate username and password
-      if (username === "lmodir" && password === "lmodir2345") {
-        // If username and password are correct, hide the login form and display the add video form
-        document.getElementById("loginForm").style.display = "none";
-        document.getElementById("addVideoForm").style.display = "block";
-      } else {
-        // If username or password is incorrect, display error message
-        alert("Error: Incorrect username or password.");
-      }
-    });
-  </script>
+</div>
 
 <!-- Add Video Form -->
-<div id="addVideoForm" style="display: none;">
-    <form method="post" action="https://script.google.com/macros/s/AKfycbyK9Y7a-JQvDHs8fVrDt7uAPUYJZzhs7zszCj0Hie8IGS759Lvj2mIIk-om1pTyEzM/exec" enctype="multipart/form-data">
-        <div>
+<div method="post" action="https://script.google.com/macros/s/AKfycbyK9Y7a-JQvDHs8fVrDt7uAPUYJZzhs7zszCj0Hie8IGS759Lvj2mIIk-om1pTyEzM/exec" enctype="multipart/form-data" id="addVideoForm" style="display: none;">
+  <!-- Your add video form here -->
+  
+   <div>
             <label for="video_name">Video Name:</label>
             <input type="text" id="video_name" name="name" required>
         </div>
@@ -123,7 +108,7 @@
             <label for="video_link">Video Link:</label>
             <input type="text" id="video_link" name="url" required>
         </div>
-
+ <div>
 <label for="poster">Poster Image:</label>
             <input type="text" id="poster" name="poster" required>
         </div>
@@ -142,8 +127,27 @@
         <div>
             <input type="submit" value="Add Video">
         </div>
-    </form>
 </div>
+
+<script>
+  document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault(); // Prevent form from submitting automatically
+
+    // Retrieve username and password values from the form
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Validate username and password
+    if (username === "lmodir" && password === "lmodir2345") {
+      // If username and password are correct, hide the login form and display the add video form
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("addVideoForm").style.display = "block"; // Display the addVideoForm
+    } else {
+      // If username or password is incorrect, display error message
+      alert("Error: Incorrect username or password.");
+    }
+  });
+</script>
+
 </body>
 </html>
-
