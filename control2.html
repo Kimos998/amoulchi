@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Your CSS styles here */
+     #addVideoForm {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="file"],
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    height: 100px;
+  }
+  
+  select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  .poster-upload {
+    margin-top: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  </style>
+
+
+
+
+<body>
+
+
+<div class="card">
+  <div class="card-header text-center">
+    add video
+  </div>
+  <div class="card-body">
+    <form id="loginForm" action="" method="post">
+      <!-- Your login form here -->
+      
+       <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" class="form-control text-center" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control text-center" id="password" name="password" required>
+          <span class="input-group-btn">
+            <button class="btn btn-default reveal" type="button"><i class="glyphicon glyphicon-eye-open"></i></button>
+          </span>
+        </div>
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      
+      
+    </form>
+  </div>
+</div>
+
+
+
+
+
+	<div class="container"  id="addVideoForm" style="display: none;margin-top: 15px;"  >
+		<form method="post" action="" name="add-film">
+			
+            
+            <div>
+            <label for="video_name">Video Name:</label>
+            <input type="text" id="video_name" name="name" required>
+        </div>
+        <div>
+            <label for="video_description">Video Description:</label>
+            <textarea id="video_description" name="description" required></textarea>
+        </div>
+        <div>
+            <label for="video_link">Video Link:</label>
+            <input type="text" id="video_link" name="url" required>
+        </div>
+ <div>
+<label for="poster">Poster Image:</label>
+            <input type="text" id="poster" name="poster" required>
+        </div>
+
+        <div>
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="action">Action</option>
+                <option value="romantic">Romantic</option>
+                <option value="horror">Horror</option>
+                <option value="kids">Kids</option>
+                <option value="science fiction">Science Fiction</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <input type="submit" value="add Film" id="submit">
+        </div> 
+            
+            
+            
+            
+            
+		</form>
+	</div>
+
+
+
+	<script>
+    
+     document.getElementById("loginForm").addEventListener("submit", function(event){
+    event.preventDefault(); // Prevent form from submitting automatically
+
+    // Retrieve username and password values from the form
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+
+    // Validate username and password
+    if (username === "lmodir" && password === "lmodir") {
+      // If username and password are correct, hide the login form and display the add video form
+      document.getElementById("loginForm").style.display = "none";
+      document.getElementById("addVideoForm").style.display = "block"; // Display the addVideoForm
+    } else {
+      // If username or password is incorrect, display error message
+      alert("Error: Incorrect username or password.");
+    }
+  });
+    
+    
+    
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw3W2ThaTzTe-QPXXwBoMzh-YXoeOYNtnXaVWlqZD7A5lEYOSFmwKoXICNKZt3PdK0k/exec'
+
+const form = document.forms['add-film']
+
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Thank you! your form is submitted successfully." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+    
+    </script>
+</body>
+</html>
